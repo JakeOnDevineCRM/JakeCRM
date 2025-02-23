@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Jake's Main Page</title>
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <!-- Sidebar Navigation -->
+    <div class="sidebar">
+      <button onclick="loadPage('home')">Home</button>
+      <button onclick="loadPage('inventory')">Inventory</button>
+      <button onclick="loadPage('trends')">Trends</button>
+      <button onclick="loadPage('logout')">Log Out</button>
+    </div>
+
+    <!-- Content Area -->
+    <div class="content">
+      <div class="content-box" id="content-box">
+        <h1>Welcome!</h1>
+        <p>Click a button on the left to navigate.</p>
+        <button id="createNode">Create Node</button>
+      </div>
+    </div>
+
+    <script src="/main.js"></script>
+  </body>
+</html>
