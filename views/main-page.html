@@ -20,7 +20,30 @@
       <div class="content-box" id="content-box">
         <h1>Welcome!</h1>
         <p>Click a button on the left to navigate.</p>
-        <button id="createNode">Create Node</button>
+        <label for="categorySelect">Select Category:</label>
+        <select id="categorySelect">
+          <option value="All">All</option>
+          <option value="Food">Foods</option>
+          <option value="Drink">Drinks</option>
+          <option value="Apparel_Cat">Apparels</option>
+        </select>
+
+        <div id="addNodeForm">
+          <h3>Add new item to current selected list</h3>
+          <input type="text" id="nodeName" placeholder="Enter name" required />
+          <input
+            type="number"
+            id="nodeQuantity"
+            placeholder="Quantity"
+            required
+          />
+          <input type="number" id="nodePrice" placeholder="Price" required />
+          <button id="submitNode">Add</button>
+        </div>
+
+        <h2>List</h2>
+
+        <div id="nodeContainer"></div>
       </div>
     </div>
 
