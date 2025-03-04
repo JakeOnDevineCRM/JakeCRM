@@ -20,19 +20,23 @@ function createNode() {
     });
 }
 
-// Load Page function
+function toggleSubmenu() {
+    let submenu = document.getElementById("inventory-submenu");
+    submenu.style.display = submenu.style.display === "block" ? "none" : "block";
+}
+
+// Load different inventory pages
 function loadPage(page) {
-    const contentBox = document.getElementById("content-box");
-    if (!contentBox) return;
+    fetch(`/views/${page}.html`)
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById("content-box").innerHTML = data;
+      })
+      .catch(error => console.error("Error loading page:", error));
+}
 
-    const pages = {
-        home: `<h1>Home Page</h1><p>Welcome to the home page.</p>`,
-        inventory: `<h1>Inventory</h1><p>In this tab will be the adding/removing from inventory and inventory list.</p>`,
-        trends: `<h1>Trends</h1><p>Here we can see all the trends.</p>`,
-        logout: `<h1>Welcome to the Secret Page</h1><p>This is a restricted area. Only authorized users can access it.</p><a href="/login" class="logout">Logout</a>`
-    };
-
-    contentBox.innerHTML = pages[page] || `<h1>Page Not Found</h1><p>The requested page does not exist.</p>`;
-};
+function loadMainPage() {
+    window.location.href = "/main"; 
+}
 
 document.addEventListener("DOMContentLoaded", attachCreateNodeEvent);
