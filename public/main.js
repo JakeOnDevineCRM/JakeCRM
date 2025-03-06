@@ -161,6 +161,23 @@ async function updatePrice(name, newPrice) {
 }
 
 // Add new Node based on category
+function confirmAdd() {
+    const name = document.getElementById("nodeName").value;
+    const quantity = document.getElementById("nodeQuantity").value;
+    const price = document.getElementById("nodePrice").value;
+    const category = document.getElementById("categorySelect").value;
+    const confirmation = confirm(
+        `Confirm Add:\n\n` +
+        `Item: ${name}\n` +
+        `Quantity: ${quantity}\n` +
+        `Price: ${price}\n` + 
+        `Category: ${category}\n`
+    );
+    if (confirmation) {
+        addNode();
+    }
+}
+
 async function addNode() {
     const name = document.getElementById("nodeName").value;
     const quantity = document.getElementById("nodeQuantity").value;
@@ -189,6 +206,6 @@ document.addEventListener("DOMContentLoaded", () => {
     attachCategoryChangeEvent();
     const submitNodeBtn = document.getElementById("submitNode");
     if (submitNodeBtn) {
-        submitNodeBtn.addEventListener("click", addNode);
+        submitNodeBtn.addEventListener("click", confirmAdd);
     }
 });
