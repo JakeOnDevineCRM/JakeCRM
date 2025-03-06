@@ -19,6 +19,7 @@ app.use(cookieParser());
 app.use(session({ secret: "Mellon", resave: false, saveUninitialized: true }));
 app.use('/', authRoutes);
 app.use('/', userRoutes);
+app.use("/views", express.static(path.join(__dirname, "views")));
 
 const port = process.env.PORT || 3002;
 app.listen(port, () => {
