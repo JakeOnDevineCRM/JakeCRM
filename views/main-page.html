@@ -9,8 +9,14 @@
   <body>
     <!-- Sidebar Navigation -->
     <div class="sidebar">
-      <button onclick="loadPage('home')">Home</button>
-      <button onclick="loadPage('inventory')">Inventory</button>
+      <button onclick="loadMainPage()">Home</button>
+      <button onclick="toggleSubmenu()">Inventory ▼</button>
+      <div id="inventory-submenu" class="submenu">
+        <button onclick="loadPage('inventory')">View Inventory</button>
+        <button onclick="loadPage('edit_inventory')">Edit Inventory</button>
+        <button onclick="loadPage('history')">Inventory History</button>
+      </div>
+    
       <button onclick="loadPage('trends')">Trends</button>
       <button onclick="loadPage('logout')">Log Out</button>
     </div>
