@@ -26,15 +26,37 @@
       <div class="content-box" id="content-box">
         <h1>Welcome!</h1>
         <p>Click a button on the left to navigate.</p>
-        <label for="categorySelect">Select Menu:</label>
-        <select id="categorySelect">
-          <option value="All">All</option>
-          <option value="Food">Foods</option>
-          <option value="Drink">Drinks</option>
-          <option value="Apparel_Cat">Apparels</option>
-        </select>
+        <div id="mainCategoryContainer">
+          <p>Loading categories...</p>
+        </div>
 
-        <div id="addNodeForm">
+        <div id="addCategoryForm">
+          <h3>Add new menu</h3>
+          <input
+            type="text"
+            id="parentCategory"
+            placeholder="Enter Menu Name"
+          />
+          <!-- Add New Category -->
+          <button id="addCategoryBtn">Add Menu</button>
+        </div>
+
+        <div id="addSubCategoryForm">
+          <h3>Add New Sub-Category</h3>
+          <input
+            type="text"
+            id="subCategoryName"
+            placeholder="Enter Sub-Category Name"
+            required
+          />
+          <button id="addSubCategoryBtn">Add Sub-Category</button>
+        </div>
+
+        <div id="subCategoryContainer">
+          <p>Loading subcategories...</p>
+        </div>
+
+        <div id="addSubItemForm">
           <h3>Add new item to current selected list</h3>
           <input type="text" id="nodeName" placeholder="Enter name" required />
           <input
@@ -44,7 +66,7 @@
             required
           />
           <input type="number" id="nodePrice" placeholder="Price" required />
-          <button id="submitNode">Add</button>
+          <button id="addItemBtn">Add</button>
         </div>
 
         <h2>List</h2>
